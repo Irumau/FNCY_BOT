@@ -121,123 +121,10 @@ client.on('messageCreate', async message => {
             }
         }
 
-
-        //-----------------NFSW COMMANDS---------------
-
-        if (messageContent === "waifuN") {
-            try {
-                const { url, dominant_color, image_id, source } = await getPictureAbout("hentai");
-                await createEmbed({
-                    nameAuthor: nameLessTag,
-                    urlImg: url,
-                    colorForEmbed: dominant_color,
-                    idFromImg: image_id,
-                    message: message,
-                    source: source
-                });
-            } catch (err) {
-                console.error('Ha ocurrido un error ' + err)
-            }
-        }
-
-        if (messageContent === "waifuN gif") {
-            const { url, dominant_color, image_id, source } = await getPictureAbout('hentai', true);
-            await createEmbed({
-                nameAuthor: nameLessTag,
-                urlImg: url,
-                colorForEmbed: dominant_color,
-                idFromImg: image_id,
-                message: message,
-                source: source
-            });
-        }
-
-        if (messageContent === "waifu ass") {
-            try {
-                const { url, dominant_color, image_id, source } = await getPictureAbout("ass");
-                await createEmbed({
-                    nameAuthor: nameLessTag,
-                    urlImg: url,
-                    colorForEmbed: dominant_color,
-                    idFromImg: image_id,
-                    message: message,
-                    source: source
-                });
-            } catch (err) {
-                console.err('Ha habido un error ' + err)
-            }
-        }
-
-        if (messageContent === "waifu milf") {
-            try {
-                const { url, dominant_color, image_id, source } = await getPictureAbout("milf");
-                await createEmbed({
-                    nameAuthor: nameLessTag,
-                    urlImg: url,
-                    colorForEmbed: dominant_color,
-                    idFromImg: image_id,
-                    message: message,
-                    source: source
-                });
-            } catch (err) {
-                console.err('Ha habido un error ' + err)
-            }
-        }
-
-
-        if (messageContent === "waifu paizuri") {
-            try {
-                const { url, dominant_color, image_id, source } = await getPictureAbout("paizuri");
-                await createEmbed({
-                    nameAuthor: nameLessTag,
-                    urlImg: url,
-                    colorForEmbed: dominant_color,
-                    idFromImg: image_id,
-                    message: message,
-                    source: source
-                });
-            } catch (err) {
-                console.err('Ha habido un error ' + err)
-            }
-        }
-
-        if (messageContent === "waifu ecchi") {
-            try {
-                const { url, dominant_color, image_id, source } = await getPictureAbout("ecchi");
-                await createEmbed({
-                    nameAuthor: nameLessTag,
-                    urlImg: url,
-                    colorForEmbed: dominant_color,
-                    idFromImg: image_id,
-                    message: message,
-                    source: source
-                });
-            } catch (err) {
-                console.err('Ha habido un error ' + err)
-            }
-        }
-
-        if (messageContent === "waifu ero") {
-            try {
-                const { url, dominant_color, image_id, source } = await getPictureAbout("ero");
-                await createEmbed({
-                    nameAuthor: nameLessTag,
-                    urlImg: url,
-                    colorForEmbed: dominant_color,
-                    idFromImg: image_id,
-                    message: message,
-                    source: source
-                });
-            } catch (err) {
-                console.err('Ha habido un error ' + err)
-            }
-        }
-
-
         // GENERAL COMMANDS
 
         if (messageContent === "saludo") {
-            await message.reply(`Que pasa Teton? ${nameLessTag}`);
+            await message.reply(`Que pasa Teton?`);
         }
 
         if (messageContent === "cleanChat") {
@@ -265,26 +152,11 @@ client.on('messageCreate', async message => {
                         .setColor('Green')
                 ],
             });
-            await message.author.send({
-                embeds: [
-                    new EmbedBuilder()
-                        .setTitle('NSFW COMMANDS')
-                        .setFields(
-                            { name: '!waifuN', value: 'Contenido NSFW sobre waifus en general.' },
-                            { name: '!waifuN gif', value: 'Muestra un gif NSFW sobre waifus en general.' },
-                            { name: '!waifu milf', value: 'Contenido NSFW sobre waifus milfs' },
-                            { name: '!waifu ass', value: 'Contenido NSFW sobre waifus.' },
-                            { name: '!waifu paizuri', value: 'Contenido NSFW sobre waifu.' },
-                            { name: '!waifu oppai', value: 'Contenido NSFW sobre waifu.' },
-                        )
-                        .setColor('Red')
-                ]
-            })
         }
     }
 })
 
-//client.login sirve para iniciar la sesion con el bot y que comience a funcionar.
+//client.login sirve para iniciar la sesión con el bot y que comience a funcionar.
 client.login(TOKEN);
 
 
